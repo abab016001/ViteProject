@@ -6,17 +6,17 @@ echo.
 echo 【createVite】
 echo.
 :: ==========================================
-call :step 1.確認已安裝Node.js
+call :step 1.確認已安裝Node.js 2.新建Vite專案
 node -v
 call :next
 
-call :step 2.新建Vite專案
+call :step 2.新建Vite專案 3.安裝相依套件
 set /p projectName=請輸入專案名稱: 
 if exist "%CD%\%projectName%" (call :warn 已存在%projectName%資料夾，請移除再建立專案 & goto :end)
 start cmd /k "npm create vite@latest %projectName%"
 call :next2
 
-call :step 3.安裝相依套件
+call :step 3.安裝相依套件 4.VSCode開啟專案
 cd %projectName%
 start cmd /k "npm install"
 call :next2
@@ -27,7 +27,7 @@ goto :end
 
 :: ==========================================
 :step
-echo _%1
+echo _%1 ____預告下一動作_%2
 echo.
 goto :eof
 
